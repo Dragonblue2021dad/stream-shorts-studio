@@ -1,0 +1,25 @@
+{
+  "name": "stream-shorts-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pipeline base for authorized livestream/VOD highlight clipping.",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "worker:render": "node dist/workers/render-worker.js",
+    "dev:render": "tsx watch src/workers/render-worker.ts"
+  },
+  "dependencies": {
+    "bullmq": "^5.34.3",
+    "dotenv": "^16.4.7",
+    "ioredis": "^5.4.2",
+    "openai": "^4.77.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": { "node": ">=20" }
+}
