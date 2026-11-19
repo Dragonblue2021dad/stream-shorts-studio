@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <title>Stream Shorts Studio</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="/" aria-label="Stream Shorts Studio inicio"><span class="brand-mark">S</span><span>stream<span class="brand-light">shorts</span></span></a><span class="local-badge"><i></i> Procesamiento local</span></header>
+    <section class="intro">
+      <p class="eyebrow">TU MOMENTO, EN FORMATO SHORT</p>
+      <h1>Del directo a<br><span>vertical.</span></h1>
+      <p class="lede">Recorta un momento de tu stream y conviértelo en un clip vertical listo para compartir.</p>
+    </section>
+    <section class="card" aria-labelledby="form-title">
+      <div class="card-heading"><div><p class="eyebrow">CREAR CLIP</p><h2 id="form-title">Prepara tu recorte</h2></div><div class="platforms" aria-label="Plataformas compatibles"><span>Twitch</span><span>YouTube</span><span>Kick</span></div></div>
+      <form id="clip-form">
+        <label for="url">Enlace del directo o VOD</label>
+        <div class="input-wrap"><span class="link-icon">↗</span><input id="url" name="url" type="url" placeholder="https://…" required autocomplete="url"><span class="input-hint">Twitch · YouTube · Kick</span></div>
+        <div class="fields">
+          <div><label for="start">Punto de inicio</label><input id="start" name="start" type="text" value="00:00:00" pattern="(?:\d+(?:\.\d+)?|\d{1,2}:\d{2}:\d{2}(?:\.\d+)?)" title="Segundos o HH:MM:SS" required><small>Formato HH:MM:SS o segundos</small></div>
+          <div><label for="duration">Duración</label><div class="duration-input"><input id="duration" name="duration" type="number" min="1" max="180" value="30" required><span>segundos · máx. 180</span></div><small>Ideal para un Short o Reel</small></div>
+        </div>
+        <div class="notice"><span class="notice-icon">✳</span><p>El vídeo se recortará al centro en formato vertical <strong>9:16 · 1080 × 1920</strong>.</p></div>
+        <button id="submit" type="submit"><span class="button-label">Crear clip vertical</span><span class="button-arrow">→</span></button>
+      </form>
+      <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+    </section>
+    <footer><span>Hecho para creadores</span><span>Usa contenido que tengas permiso para descargar y compartir.</span></footer>
+  </main>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
