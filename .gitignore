@@ -1,0 +1,5 @@
+node_modules/
+clips/
+*.partial.mp4
+.env
+.DS_Store
